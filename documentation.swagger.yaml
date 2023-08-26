@@ -1,0 +1,59 @@
+openapi: "3.0.0"
+info:
+  version: "1.0.0"
+  title: "Holiday API"
+  description: "API para obtener información sobre feriados.\n El tipo de respuesta se puede ejecutar en formato JSON o XML depenndiendo como quieran integrarlo"
+
+servers:
+  - url: "http://localhost:8080"
+
+paths:
+  /holidays:
+    get:
+      summary: "Obtener información sobre feriados"
+      description: "Devuelve una lista de feriados en un rango de fechas y/o de un tipo específico."
+      parameters:
+        - name: "startDate"
+          in: "query"
+          description: "Fecha de inicio del rango"
+          required: false
+          schema:
+            type: "string"
+            format: "date"
+        - name: "endDate"
+          in: "query"
+          description: "Fecha de fin del rango"
+          required: false
+          schema:
+            type: "string"
+            format: "date"
+        - name: "type"
+          in: "query"
+          description: "Tipo de feriado (Civil, etc.)"
+          required: false
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "Éxito"
+          content:
+            application/json:
+              example:
+                data:
+                  - date: "2023-01-01T00:00:00Z"
+                    title: "Año Nuevo"
+                    type: "Civil"
+                    inalienable: true
+                    extra: "Civil e Irrenunciable"
+                status:
+                  code: 200
+                  message: "Proceso ejecutado sin problemas"
+        "400":
+          description: "Error"
+          content:
+            application/json:
+              example:
+                data: null
+                status:
+                  code: 400
+                  message: "No se encontraron registros!"
