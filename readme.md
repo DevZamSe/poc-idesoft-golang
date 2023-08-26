@@ -1,16 +1,9 @@
-# Título del Proyecto
-
-## Descripción
-
-Breve descripción del proyecto, qué hace, por qué es útil, etc.
-
-![Nombre de la Imagen](ruta/de/la/imagen.jpg) <!-- Imagen de ejemplo -->
+# POC-GOLANG-IDESOFT
 
 ## Tabla de Contenido
 
 - [Instalación](#instalación)
 - [Uso](#uso)
-- [Estructura de Carpetas](#estructura-de-carpetas)
 
 ## Instalación
 
